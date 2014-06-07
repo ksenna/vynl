@@ -1,0 +1,4 @@
+%h4 Find similar artists
+= form_for @similar, url: similar_artists_path do |f|
+	= f.text_field :name
+	= f.submit "Find"

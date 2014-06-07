@@ -1,0 +1,15 @@
+.top-section
+  .col-sm-4
+  .col-sm-4
+    .border-form-div
+      %h2 Sign in
+      = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+        = f.email_field :email, :autofocus => true
+        %p
+        = f.password_field :password
+        %p
+        = f.label :remember_me, :class => "checkbox" do
+          = f.check_box :remember_me, :class => "checkbox"
+        = f.submit "Sign in",:class=>'btn btn-primary'
+      = render "devise/shared/links"
+  .col-sm-4

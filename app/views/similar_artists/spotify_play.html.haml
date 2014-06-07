@@ -1,0 +1,60 @@
+%p= @artist
+
+.info
+	Enter an artist to begin listening to music
+%br
+	%span.box
+		Seed artist:
+		%input#artist{:name => "artist", :onkeydown => "if (event.keyCode == 13) newArtist()", :size => "24", :title => "Artist", :type => "text", :value => "Enter name"}/
+	%button#go{:disabled => "", :name => "go", :onclick => "newArtist()", :value => "go"} Go
+	#info   
+	#all_results
+	#tracks
+	%h2 The Playlist
+	#results   
+:javascript
+	jQuery.ajaxSettings.traditional = true; 
+	 
+	var embed = '<iframe src="https://embed.spotify.com/?uri=TRACK_URI" style="width:300px; height:380px;" frameborder="0" allowTransparency="true"></iframe>';
+	 
+	 
+	function fetchArtistPlaylist(artist,  wandering, variety) {
+			var url = 'http://developer.echonest.com/api/v4/playlist/static?api_key=75JU1NHPEPMGDPCLS&callback=?';
+	 
+			$("#all_results").hide();
+			info("Creating the playlist ...");
+			$.getJSON(url, { 'artist': artist, 'format':'jsonp', 
+							'bucket': [ 'id:spotify-WW', 'tracks'], 'limit' : true,
+							'results': 12, 'type':'artist-radio', 'variety' : variety,
+							'distribution' : wandering ? 'wandering' : 'focused' }, function(data) {
+	 
+					info("");
+					$("#results").empty();
+					$("#all_results").show();
+	 
+					for (var i = 0; i < data.response.songs.length; i++) {
+							var song = data.response.songs[i];
+							var tid = song.tracks[0].foreign_id.replace('-WW', '');
+							var tembed = embed.replace('TRACK_URI', tid);
+							var li = $("").html(tembed);
+							$("#results").append(li);
+					}
+			});
+	}
+	 
+	 
+	function newArtist() {
+			var artist = $("#artist").val();
+			console.log(artist);
+			fetchArtistPlaylist(artist, false, .2);
+	}
+	 
+	function info(txt) {
+			$("#info").text(txt);
+	}
+	 
+	 
+	$(document).ready(function() {
+			$("#go").removeAttr("disabled");
+			$("#all_results").hide();
+	});

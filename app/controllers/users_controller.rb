@@ -6,6 +6,17 @@ class UsersController < ApplicationController
 		# response = Echowrap.song_search(artist: "Weezer")
 		# response = Echowrap.song_search(:artist)
 		# @artist = response[0].artist_name
+		@user = current_user
+		@new_profile = Profile.new
+	end
+
+	def create
+		@new_profile = Profile.new(profile_params)
+		if @profile.save
+			redirect_to users_path, notice: "Item added."
+		else
+			redirect_to :back, alert: "Failed to save."
+		end
 	end
 
 	# def spotify_player

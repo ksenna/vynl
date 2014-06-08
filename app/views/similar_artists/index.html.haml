@@ -1,9 +1,3 @@
-%h4 Find similar artists
-= form_tag('/similar_artists/get_string') do
-	Enter artist name
-	= text_field_tag(:string, params[:string])
-	= submit_tag "Find"
-
 %p= @similar
 
 / = render 'similar_artists'

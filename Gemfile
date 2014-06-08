@@ -9,7 +9,7 @@ gem 'turbolinks'
 gem 'devise'
 gem 'carrierwave'
 gem 'sass-rails', '~> 4.0.3'
-gem 'echowrap', :git => "git@github.com:/ksenna/echowrap.git"
+gem 'echowrap', :git => "https://github.com/ksenna/echowrap.git"
 gem 'httparty'
 
 group :test do

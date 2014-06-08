@@ -11,8 +11,7 @@ class SimilarArtistsController < ApplicationController
 	def create
 		@similar = SimilarArtist.new(similar_params)
 		if @similar.save
-			response = Echowrap.song_search(@similar)
-			sim_artists = Echowrap.artist_similar(:id => response[0].artist_id, :results => 3)
+			redirect_to similar_artist_path(@similar)
 		else
 			render :new, alert: "Oops, there was an error."
 		end
@@ -21,7 +20,8 @@ class SimilarArtistsController < ApplicationController
 
 
 	def show
-		response = Echowrap.song_search(:string)
+		@similar = SimilarArtist.find(params[:id])
+		response = Echowrap.song_search(artist: @similar.name)
 		similar = Echowrap.artist_similar(:id => response[0].artist_id, :results => 3)
 		@artists = [similar[0], similar[1], similar[2]]
 	end

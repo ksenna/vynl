@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:/ksenna/echowrap.git
+  remote: https://github.com/ksenna/echowrap.git
   revision: ae3e6ddfdf7a312cec61773bfba066b756bd11b3
   specs:
     echowrap (0.1.3)

@@ -3,7 +3,7 @@ class API::UserController < ApplicationController
 	http_basic_authenticate_with :name => "hpuser", :password => "hp123pass"
 	skip_before_filter :authenticate_user!
 	before_filter :find_user, :except => [:index, :create]
-
+	skip_filter :verify_authenticity_token
 	def find_user
 		@user = User.find_by_id(params[:id])
 	end

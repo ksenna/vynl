@@ -9058,3 +9058,73 @@ Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-06-07 21:24:38 -0400
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-07 21:24:38 -0400
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2014-06-07 21:28:55 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.haml (4.0ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (28.5ms)
+  Rendered layouts/_user_header.html.erb (1.0ms)
+Completed 200 OK in 156ms (Views: 104.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-07 21:28:55 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-06-07 21:28:55 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-07 21:28:55 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-07 21:28:55 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-07 21:28:55 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-06-07 21:28:55 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-06-07 21:28:55 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-07 21:28:55 -0400
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2014-06-07 21:29:01 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ISF6e2/tYqLDAczH0NpHFAkORqoahFIcuDThgrFsA2s=", "user"=>{"email"=>"jkellysenna@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (1.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'jkellysenna@gmail.com'  ORDER BY "users"."id" ASC LIMIT 1
+Completed 401 Unauthorized in 14ms
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ISF6e2/tYqLDAczH0NpHFAkORqoahFIcuDThgrFsA2s=", "user"=>{"email"=>"jkellysenna@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  Rendered devise/shared/_links.haml (0.6ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (3.4ms)
+  Rendered layouts/_user_header.html.erb (0.6ms)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-06-07 21:29:01 -0400
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-06-07 21:29:01 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-06-07 21:29:01 -0400
+
+
+Started GET "/assets/bootstrap.css?body=1" for 127.0.0.1 at 2014-06-07 21:29:01 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-06-07 21:29:01 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-06-07 21:29:01 -0400
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2014-06-07 21:29:01 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-06-07 21:29:01 -0400

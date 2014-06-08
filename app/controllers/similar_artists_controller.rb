@@ -1,7 +1,7 @@
 class SimilarArtistsController < ApplicationController
 
 	def index
-		
+		@similars = current_user.similars.all
 	end
 
 	def new

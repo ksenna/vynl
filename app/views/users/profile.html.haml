@@ -1,0 +1,18 @@
+This is a test!
+.top-section
+  .col-sm-6
+  - form_for @new_profile do |f|   
+    .col-sm-10
+      = f.label "Favorite Band/Singer"
+      = f.text_field :song_1, placeholder: "Favorite Band/Singer", class: "input form-control"
+      %p
+      = f.label "Favorite Band/Singer"
+      = f.text_field :song_2, placeholder: "Favorite Band/Singer", class: "input form-control"
+      %p
+      = f.label "Favorite Band/Singer"
+      = f.text_field :song_3, placeholder: "Favorite Band/Singer", class: "input form-control"
+
+      = f.hidden_field :echonest_name
+      = f.hidden_field :echonest_number
+    .col-sm-2
+      = f.submit "ABuild Profile", class: "button postfix"

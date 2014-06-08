@@ -11,6 +11,8 @@ gem 'carrierwave'
 gem 'sass-rails', '~> 4.0.3'
 gem 'echowrap', :git => "git@github.com:/ksenna/echowrap.git"
 gem 'httparty'
+gem 'rabl'
+gem 'oj'
 
 group :test do
 	gem 'rspec-rails'

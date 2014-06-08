@@ -9,15 +9,7 @@ gem 'turbolinks'
 gem 'devise'
 gem 'carrierwave'
 gem 'sass-rails', '~> 4.0.3'
-<<<<<<< HEAD
-<<<<<<< HEAD
 gem 'echowrap', :git => "https://github.com/ksenna/echowrap.git"
-=======
-gem 'echowrap', :git => "git@github.com:/ksenna/echowrap.git"
->>>>>>> FETCH_HEAD
-=======
-gem 'echowrap', :git => "git@github.com:/ksenna/echowrap.git"
->>>>>>> FETCH_HEAD
 gem 'httparty'
 gem 'rabl'
 gem 'oj'
